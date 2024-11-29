@@ -5,17 +5,12 @@ class Room : public Encounter
 public: 
     std::string Enemy1() override
     {
-        std::vector<uint8_c> v = {8, 54, 2, 4};
-        float_c f = 1.2;
-        float_c val = v[0] + f;
-        return val;
+        return std::to_string( 0 );
     }
 
     std::string Enemy2() override
     {
-        int64_c v = 555;
-        int8_c v2 = 2;
-        return std::to_string(v+v2);
+        return std::to_string( 0 );
     }
 };
 
@@ -25,9 +20,9 @@ int main()
 
     room.LoadAdventure
     (
-        /*   Age: */ 23
-        ,/* Mana: */ 158
- ,/* Amulet Wear: */ 2
+        /*   Age: */ 0
+        ,/* Mana: */ 0
+ ,/* Amulet Wear: */ 0
     );
 
     room.Fight(&Room::Enemy1, room);
