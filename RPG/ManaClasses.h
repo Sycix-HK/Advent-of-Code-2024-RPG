@@ -1,4 +1,20 @@
+#pragma once
+
 #include "Core.h"
+
+template <typename AnyT>
+class ManaType{
+private:
+    AnyT value;
+
+public:
+    ManaType(AnyT v = 0) : value(v) {
+        g_manaCounter -= sizeof(AnyT)*8;
+    }
+
+    AnyT Extract() { return value;}
+    AnyT Get() { return Extract(); }
+};
 
 template <typename T>
 class ManaInt {
@@ -70,8 +86,7 @@ public:
         return std::to_string(value);
     }
 
-    // Getter
-    T get() const { return value; }
+    T Extract() const { return value; }
 };
 
 using uint8_c = ManaInt<uint8_t>;
@@ -146,8 +161,8 @@ public:
         return std::to_string(value);
     }
 
-    // Getter
-    T get() const { return value; }
+    T Extract() const { return value; }
+    T Get() { return Extract(); }
 };
 
 // Typedefs for specific floating-point types
@@ -183,8 +198,8 @@ public:
     // Implicit cast to std::string
     operator std::string() const { return value ? "true" : "false"; }
 
-    // Getter
-    bool get() const { return value; }
+    bool Extract() const { return value; }
+    bool Get() { return Extract(); }
 };
 
 class char_c {
@@ -241,8 +256,8 @@ public:
     // Implicit cast to std::string
     operator std::string() const { return std::string(1, value); }
 
-    // Getter
-    char get() const { return value; }
+    char Extract() const { return value; }
+    char Get() { return Extract(); }
 };
 
 #include <cstring>

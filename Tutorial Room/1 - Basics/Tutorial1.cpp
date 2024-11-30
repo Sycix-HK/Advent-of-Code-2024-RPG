@@ -27,7 +27,9 @@ int main()
     );
 
     room.Actions.Attack(&Room::Enemy1, room);
+    room.Actions.Rest();
     room.Actions.Attack(&Room::Enemy2, room);
+    room.Actions.Repair();
 
     return 0;
 }
