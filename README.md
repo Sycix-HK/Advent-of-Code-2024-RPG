@@ -15,6 +15,8 @@ Instead of solving puzzles straightforwardly, you manage a limited mana pool, co
   - You may also repair the amulet between puzzles, which won't restore mana, but will clear all broken characters from the amulet to give a fresh start to it. This action will age you the same way.
   - Your goal is to complete the challenges as young as possible.
 
+---
+
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |  |   |   |   |  | 👤🗡️ | Day 1 <br> ⏳⏳  |
@@ -23,6 +25,6 @@ Instead of solving puzzles straightforwardly, you manage a limited mana pool, co
 | Day 16 <br> ⏳⏳ | Day 17 <br> ⏳⏳  | Day 18 <br> ⏳⏳  | Day 19 <br> ⏳⏳  | Day 20 <br> ⏳⏳  | Day 21 <br> ⏳⏳  | Day 22 <br> ⏳⏳  |
 | Day 23 <br> ⏳⏳ |  Day 24 <br> ⏳⏳  |   Day 25 <br> ⏳⏳ |   |   |
 
+---
+
 ![image](https://github.com/user-attachments/assets/bfe27f61-d2e6-4a98-a386-34c8ee8ed178)
-
-
