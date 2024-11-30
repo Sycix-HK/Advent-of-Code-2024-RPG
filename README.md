@@ -16,4 +16,5 @@ This repository contains solutions for Advent of Code 2024, but it's an RPG dung
 | Day 16 <br> ⏳⏳ | Day 17 <br> ⏳⏳  | Day 18 <br> ⏳⏳  | Day 19 <br> ⏳⏳  | Day 20 <br> ⏳⏳  | Day 21 <br> ⏳⏳  | Day 22 <br> ⏳⏳  |
 | Day 23 <br> ⏳⏳ |  Day 24 <br> ⏳⏳  |   Day 25 <br> ⏳⏳ |   |   |
 
-![image](https://github.com/user-attachments/assets/0e9798d0-c9ff-4306-99fa-ac1be2514f0c)
+![image](https://github.com/user-attachments/assets/5fde2257-ef4b-4b38-a297-cae0d87acd72)
+
