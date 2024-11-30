@@ -10,10 +10,12 @@ This repository contains solutions for Advent of Code 2024, but it's an RPG dung
 
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  |   |   |   |  |  | Day 1 <br> ⏳⏳  |
+|  |   |   |   |  | 👤🗡️ | Day 1 <br> ⏳⏳  |
 | Day 2 <br> ⏳⏳ | Day 3 <br> ⏳⏳  | Day 4 <br> ⏳⏳  | Day 5 <br> ⏳⏳  | Day 6 <br> ⏳⏳  | Day 7 <br> ⏳⏳  | Day 8 <br> ⏳⏳  |
 | Day 9 <br> ⏳⏳ | Day 10 <br> ⏳⏳  | Day 11 <br> ⏳⏳  | Day 12 <br> ⏳⏳  | Day 13 <br> ⏳⏳  | Day 14 <br> ⏳⏳  | Day 15 <br> ⏳⏳  |
 | Day 16 <br> ⏳⏳ | Day 17 <br> ⏳⏳  | Day 18 <br> ⏳⏳  | Day 19 <br> ⏳⏳  | Day 20 <br> ⏳⏳  | Day 21 <br> ⏳⏳  | Day 22 <br> ⏳⏳  |
 | Day 23 <br> ⏳⏳ |  Day 24 <br> ⏳⏳  |   Day 25 <br> ⏳⏳ |   |   |
 
-![image](https://github.com/user-attachments/assets/0e9798d0-c9ff-4306-99fa-ac1be2514f0c)
+![image](https://github.com/user-attachments/assets/bfe27f61-d2e6-4a98-a386-34c8ee8ed178)
+
+
