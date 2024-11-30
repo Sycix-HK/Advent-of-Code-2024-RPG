@@ -1,12 +1,19 @@
 # Advent of Code 2024: RPG Challenge
-This repository contains solutions for Advent of Code 2024, but it's an RPG dungeon crawler, where memory allocations consume mana. The goal is to solve the puzzles while managing a limited mana pool.
+This repository contains solutions for Advent of Code 2024, presented with a unique twist: an RPG-inspired system. 
+In this approach, solving puzzles becomes part of a larger challenge involving resource management, constraints, and character progression.
+Instead of solving puzzles straightforwardly, you manage a limited mana pool, contend with aging as you rest, and carefully use an amulet with specific rules and restrictions.
 
 - Mana System: Every memory allocation deducts from your mana pool.
-- Resting and Aging: Resting between puzzles restores mana but increases your character’s age. Your goal is to complete the challenges as young as possible.
 - Amulet: Creates a custom scope where allocations won't cost mana, but each line of use wears it down, introducing loss of characters to use inside scope next time.
-  - You may only use the amulet once per encounter
+  - You may only use the amulet once per enemy (aoc half day)
   - You may not use it inside loops
   - You may not return early from the amulet's scope
+  - Every 10 lines used will break characters, constraining the letters you can use within the amulet's scope for consequent uses, until repaired.
+  - You may not exceed 25 broken characters, not even if you intend to repair it after.
+- Resting and Aging:
+  - Resting between puzzles restores mana but increases your character’s age.
+  - You may also repair the amulet between puzzles, which won't restore mana, but will clear all broken characters from the amulet to give a fresh start to it. This action will age you the same way.
+  - Your goal is to complete the challenges as young as possible.
 
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
