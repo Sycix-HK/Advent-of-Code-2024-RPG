@@ -61,6 +61,7 @@ void ActionHandler::Repair()
 {
     SystemUtilities::flavorPrint("You take a moment to repair your amulet, as the passage of time weigh heavier upon you.");
     mp_state->amuletWear = 0;
+    mp_state->brokenCharacters = "";
     SystemUtilities::printState(mp_state);
 }
 
