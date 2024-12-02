@@ -3,17 +3,6 @@ This repository contains solutions for Advent of Code 2024, presented with a uni
 In this approach, solving puzzles becomes part of a larger challenge involving resource management, constraints, and character progression.
 Instead of solving puzzles straightforwardly, you manage a limited energy pool, contend with aging as you rest, and carefully use an artifact with specific rules and restrictions.
 
-- Energy System: Every memory allocation deducts from your energy pool.
-- Artifact: Creates a custom scope where allocations won't cost energy, but each line of use wears it down, introducing loss of characters to use inside scope next time.
-  - You may only use the artifact once per enemy (aoc half day)
-  - You may not use it inside loops
-  - You may not return early from the artifact's scope
-  - Every 10 lines used will break characters, constraining the letters you can use within the artifact's scope for consequent uses, until repaired.
-  - You may not exceed 25 broken characters, not even if you intend to repair it after.
-- Resting and Aging:
-  - Resting between puzzles restores energy but increases your character’s age.
-  - You may also repair the artifact between puzzles, which won't restore energy, but will clear all broken characters from the artifact to give a fresh start to it. This action will age you the same way.
-  - Your goal is to complete the challenges as young as possible.
 
 ---
 
@@ -28,4 +17,26 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 ---
 
 ![image](https://github.com/user-attachments/assets/441bc3c4-85a3-4abd-a7ab-1980eee3d30a)
+
+# Features and Rules
+
+### Energy System
+- Every memory allocation deducts from your energy pool.
+- Some personal rules:
+    - Loop indicies and const/cache variables do not have to cost energy, since you could obviously replace them by computing the same line everywhere it's used
+ 
+### Artifact:
+  - Creates a custom scope where allocations won't cost energy, but each line of use wears it down, introducing loss of characters to use inside scope next time.
+  - You may only use the artifact once per enemy (aoc half day)
+  - You may not use it inside loops
+  - You may not return early from the artifact's scope
+  - Every 10 lines used will break characters, constraining the letters you can use within the artifact's scope for consequent uses, until repaired.
+  - You may not exceed 25 broken characters, not even if you intend to repair it after.
+  - When dealing with a long line with multiple operations or lambda functions inside them (like an std::transform or std::acumulate), the rule is that each ; counts as a line. So an std::transform with a lambda function with a single return line costs 2 lines of wear.
+
+### Resting and Aging:
+  - Resting between puzzles restores energy but increases your character’s age.
+  - You may also repair the artifact between puzzles, which won't restore energy, but will clear all broken characters from the artifact to give a fresh start to it. This action will age you the same way.
+  - Your goal is to complete the challenges as young as possible.
+
 
