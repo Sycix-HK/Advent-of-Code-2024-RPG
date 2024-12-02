@@ -10,6 +10,9 @@
 #include <cstdint>
 #include <typeinfo>
 #include <cstring>
+#include <algorithm>
+#include <numeric>
+#include <memory>
 
 // Constants
 const int cStartingAge = 20;
@@ -21,8 +24,12 @@ const int cMaxAmuletBrokenChars = 25;
 // Global variables
 inline int32_t g_manaCounter = 0;
 
+// input
+inline std::vector<std::string> lines;
+
 struct GameState
 {
+    int roomId;
     int age;
     int amuletWear;
     int32_t* p_manaCounter;
@@ -34,9 +41,15 @@ struct GameState
     bool amuletUsedAlready;
 };
 
+#include "BaseTheme.h"
+#include "HistorianTheme.h"
+HistorianTheme* theme = new HistorianTheme();
+
+#include "Actions.h"
+ActionHandler* Actions = new ActionHandler();
+
 #include "ManaClasses.h"
 #include "Utilities.h"
-#include "Actions.h"
 
 
 class Encounter 
@@ -45,22 +58,21 @@ private:
     GameState* mp_state;
 public:
 
-    ActionHandler Actions;
-    Encounter() 
+    Encounter(int aRoomId) 
     {
         std::cout << std::endl;
         mp_state = new GameState();
 
+        mp_state->roomId = aRoomId;
         mp_state->age = cStartingAge;
         g_manaCounter = cStartingMana;
         mp_state->p_manaCounter = &g_manaCounter;
         mp_state->amuletWear = 0;
         mp_state->brokenCharacters = "";
 
-        Actions.SetGameState(mp_state);
+        Actions->SetGameState(mp_state);
 
-        SystemUtilities::flavorPrint("You push open the creaking door to enter a new room full of enemies.");
-        std::cout << std::endl;
+        theme->StartDay(aRoomId);
     }
 
     void LoadAdventure(int aAge, int32_t aManaLeft, int aAmuletWear, std::string aBrokenCharacters)
@@ -74,7 +86,8 @@ public:
         g_manaCounter = aManaLeft;
         mp_state->amuletWear = aAmuletWear;
         mp_state->brokenCharacters = aBrokenCharacters;
-        SystemUtilities::printState(mp_state);
+
+        theme->printState(mp_state);
     }
 
     virtual ~Encounter() 
@@ -102,11 +115,24 @@ public:
     {
         g_manaCounter -= sizeof(T);
     }
-    void Cast(std::any obj)
+    template <typename T>
+    void Cast(const T &obj)
     {
-        g_manaCounter -= sizeof(obj);
+        size_t size = 0;
+
+        // Check if the object is a std::vector
+        if constexpr (std::is_same_v<T, std::vector<typename T::value_type>>)
+        {
+            size = obj.size() * sizeof(typename T::value_type); // Compute content size
+        }
+        else
+        {
+            size = sizeof(T);
+        }
+
+        g_manaCounter -= size;
     }
 
-    virtual std::string Enemy1() = 0;
-    virtual std::string Enemy2() = 0;
+    virtual std::string Part1() = 0;
+    virtual std::string Part2() = 0;
 };

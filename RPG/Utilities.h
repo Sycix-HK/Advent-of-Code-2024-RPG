@@ -3,19 +3,33 @@
 #include "Core.h"
 
 #include <fstream>
+#include <sstream>
 
-namespace ReadIntents
+namespace AOCUtilities
 {
-    std::vector<std::string> ReadAsStrings(const std::string& filePath) 
+    std::vector<std::string> ReadLines(int aRoom)
     {
+        std::stringstream path_ss;
+        path_ss << "./Dungeon/Room " << aRoom << "/input.txt";
+        std::string filePath = path_ss.str();
+
         std::ifstream file(filePath);
-        if (!file.is_open()) {
-            throw std::runtime_error("Failed to open file: " + filePath);
+        if (!file.is_open())
+        {
+            std::stringstream path_ss;
+            path_ss << "X:/AdventOfCode/Advent-of-Code-2024-RPG/Dungeon/Room " << aRoom << "/input.txt";
+            std::string filePath = path_ss.str();
+            if (!file.is_open())
+            {
+                theme->MissingInput();
+                throw std::runtime_error("Failed to open file: " + filePath);
+            }
         }
 
         std::vector<std::string> lines;
         std::string line;
-        while (std::getline(file, line)) {
+        while (std::getline(file, line))
+        {
             lines.push_back(line);
         }
 
@@ -23,44 +37,21 @@ namespace ReadIntents
         return lines;
     }
 
-    std::vector<int> ReadAsInts(const std::string& filePath) 
+    std::vector<std::string> split(const std::string &str, const std::string &delimiter)
     {
-        std::ifstream file(filePath);
-        if (!file.is_open()) {
-            throw std::runtime_error("Failed to open file: " + filePath);
+        std::vector<std::string> tokens;
+        size_t start = 0;
+        size_t end = str.find(delimiter);
+
+        while (end != std::string::npos)
+        {
+            tokens.push_back(str.substr(start, end - start));
+            start = end + delimiter.length();
+            end = str.find(delimiter, start);
         }
 
-        std::vector<int> numbers;
-        std::string line;
-        while (std::getline(file, line)) {
-            try {
-                numbers.push_back(std::stoi(line));
-            } catch (const std::invalid_argument& e) {
-                throw std::runtime_error("Invalid integer in file: " + line);
-            } catch (const std::out_of_range& e) {
-                throw std::runtime_error("Integer out of range in file: " + line);
-            }
-        }
+        tokens.push_back(str.substr(start));
 
-        file.close();
-        return numbers;
-    }
-}
-
-namespace SystemUtilities 
-{
-    static void flavorPrint(std::string text)
-    {
-        std::cout << "\x1b[0m * " << text << "\x1b[97m\n";
-    }
-
-    static void printState(GameState *apState)
-    {
-        std::cout << std::endl
-                  << "\x1b[97m- Age: \x1b[95m" << apState->age << "\x1b[97m years" <<  std::endl
-                  << "\x1b[97m- Mana: \x1b[94m" << g_manaCounter << "\x1b[97m / \x1b[34m" << apState->maxMana() << std::endl
-                  << "\x1b[97m- Amulet Wear: \x1b[33m" << apState->amuletWear << "\x1b[97m lines"  << std::endl
-                  << "\x1b[0m- Characters broken out of amulet: \x1b[97m"<< apState->brokenCharacters << std::endl
-                  << "\x1b[0m" << std::endl;
+        return tokens;
     }
 }
