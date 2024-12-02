@@ -9,7 +9,7 @@ private:
 
 public:
     ManaType(AnyT v = 0) : value(v) {
-        g_manaCounter -= sizeof(AnyT)*8;
+        UseMana(sizeof(AnyT), typeid(AnyT).name());
     }
 
     AnyT Extract() { return value;}
@@ -24,7 +24,7 @@ private:
 public:
     // Constructor
     ManaInt(T v = 0) : value(v) {
-        g_manaCounter -= sizeof(T)*8;
+        UseMana(sizeof(T), typeid(T).name());
     }
 
     // Overloaded assignment operator
@@ -33,22 +33,68 @@ public:
         return *this;
     }
 
-    // Arithmetic operators
+    operator int() const {
+        return static_cast<int>(value);
+    }
+
+        // Arithmetic operators with another ManaInt
     ManaInt operator+(const ManaInt& other) const { return ManaInt(value + other.value); }
     ManaInt operator-(const ManaInt& other) const { return ManaInt(value - other.value); }
     ManaInt operator*(const ManaInt& other) const { return ManaInt(value * other.value); }
-    ManaInt operator/(const ManaInt& other) const { 
-        if (other.value == 0) throw std::runtime_error("Division by zero!");
-        return ManaInt(value / other.value); 
-    }
+    ManaInt operator/(const ManaInt& other) const { return ManaInt(value / other.value); }
+    ManaInt operator%(const ManaInt& other) const { return ManaInt(value % other.value); }
+
+    // Arithmetic operators with an int
+    ManaInt operator+(int other) const { return ManaInt(value + static_cast<T>(other)); }
+    ManaInt operator-(int other) const { return ManaInt(value - static_cast<T>(other)); }
+    ManaInt operator*(int other) const { return ManaInt(value * static_cast<T>(other)); }
+    ManaInt operator/(int other) const { return ManaInt(value / static_cast<T>(other)); }
+    ManaInt operator%(int other) const { return ManaInt(value % static_cast<T>(other)); }
+
+    // Friend functions for symmetry: int + ManaInt, int - ManaInt, etc.
+    friend ManaInt operator+(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) + rhs.value); }
+    friend ManaInt operator-(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) - rhs.value); }
+    friend ManaInt operator*(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) * rhs.value); }
+    friend ManaInt operator/(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) / rhs.value); }
+    friend ManaInt operator%(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) % rhs.value); }
+
+    // Compound assignment operators with another ManaInt
+    ManaInt& operator+=(const ManaInt& other) { value += other.value; return *this; }
+    ManaInt& operator-=(const ManaInt& other) { value -= other.value; return *this; }
+    ManaInt& operator*=(const ManaInt& other) { value *= other.value; return *this; }
+    ManaInt& operator/=(const ManaInt& other) { value /= other.value; return *this; }
+    ManaInt& operator%=(const ManaInt& other) { value %= other.value; return *this; }
+
+    // Compound assignment operators with an int
+    ManaInt& operator+=(int other) { value += static_cast<T>(other); return *this; }
+    ManaInt& operator-=(int other) { value -= static_cast<T>(other); return *this; }
+    ManaInt& operator*=(int other) { value *= static_cast<T>(other); return *this; }
+    ManaInt& operator/=(int other) { value /= static_cast<T>(other); return *this; }
+    ManaInt& operator%=(int other) { value %= static_cast<T>(other); return *this; }
 
     // Comparison operators
     bool operator==(const ManaInt& other) const { return value == other.value; }
     bool operator!=(const ManaInt& other) const { return value != other.value; }
     bool operator<(const ManaInt& other) const { return value < other.value; }
-    bool operator>(const ManaInt& other) const { return value > other.value; }
     bool operator<=(const ManaInt& other) const { return value <= other.value; }
+    bool operator>(const ManaInt& other) const { return value > other.value; }
     bool operator>=(const ManaInt& other) const { return value >= other.value; }
+
+    // Comparison operators with an int
+    bool operator==(int other) const { return value == static_cast<T>(other); }
+    bool operator!=(int other) const { return value != static_cast<T>(other); }
+    bool operator<(int other) const { return value < static_cast<T>(other); }
+    bool operator<=(int other) const { return value <= static_cast<T>(other); }
+    bool operator>(int other) const { return value > static_cast<T>(other); }
+    bool operator>=(int other) const { return value >= static_cast<T>(other); }
+
+    // Friend functions for symmetry
+    friend bool operator==(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) == rhs.value; }
+    friend bool operator!=(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) != rhs.value; }
+    friend bool operator<(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) < rhs.value; }
+    friend bool operator<=(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) <= rhs.value; }
+    friend bool operator>(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) > rhs.value; }
+    friend bool operator>=(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) >= rhs.value; }
 
     // Bitwise operators
     ManaInt operator&(const ManaInt& other) const { return ManaInt(value & other.value); }
@@ -107,7 +153,7 @@ private:
 public:
     // Constructor
     ManaFloat(T v = 0) : value(v) {
-        g_manaCounter -= sizeof(T) * 8;
+        UseMana(sizeof(T), "ManaFloat");
     }
 
     // Overloaded assignment operator
@@ -177,7 +223,7 @@ private:
 public:
     // Constructor
     bool_c(bool v = false) : value(v) {
-        g_manaCounter -= sizeof(bool) * 8;
+        UseMana(sizeof(bool), "bool");
     }
 
     // Overloaded assignment operator
@@ -209,7 +255,7 @@ private:
 public:
     // Constructor
     char_c(char v = '\0') : value(v) {
-        g_manaCounter -= sizeof(char) * 8;
+        UseMana(sizeof(char), "char");
     }
 
     // Overloaded assignment operator
@@ -273,15 +319,15 @@ public:
     // Default Constructor
     string_c(const char* str = "") {
         length = std::strlen(str);
-        g_manaCounter -= length * sizeof(char) * 8; // Deduct mana
-        value = new char[length + 1];              // Allocate memory
+        UseMana(length * sizeof(char), "string_c");
+        value = new char[length + 1];              
         std::strcpy(value, str);
     }
 
     // Copy Constructor
     string_c(const string_c& other) {
         length = other.length;
-        g_manaCounter -= length * sizeof(char) * 8; // Deduct mana
+        UseMana(length * sizeof(char), "string_c");
         value = new char[length + 1];
         std::strcpy(value, other.value);
     }
@@ -305,7 +351,6 @@ public:
         delete[] value;
 
         length = other.length;
-        g_manaCounter -= length * sizeof(char) * 8; // Deduct mana
         value = new char[length + 1];
         std::strcpy(value, other.value);
         return *this;
@@ -326,7 +371,7 @@ public:
     // Concatenation
     string_c operator+(const string_c& other) const {
         size_t newLength = length + other.length;
-        g_manaCounter -= newLength * sizeof(char) * 8; // Deduct mana
+        UseMana(newLength * sizeof(char), "char");
         char* newValue = new char[newLength + 1];
 
         std::strcpy(newValue, value);

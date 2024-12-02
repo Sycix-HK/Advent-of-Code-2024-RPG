@@ -1,8 +1,8 @@
 @echo off
 
 set "DAY=%~1"
-set "SOURCE_PATH=.\Dungeon\Room %DAY%\Room%DAY%.cpp"
-set "OUTPUT_PATH=.\Dungeon\Room %DAY%\output\Room%DAY%.exe"
+set "SOURCE_PATH=.\Dungeon\Room%DAY%\Room%DAY%.cpp"
+set "OUTPUT_PATH=.\Dungeon\Room%DAY%\output\Room%DAY%.exe"
 
 cls
 

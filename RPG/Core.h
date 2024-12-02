@@ -16,13 +16,23 @@
 
 // Constants
 const int cStartingAge = 20;
-const int32_t cManaGainFromAge = 50;
-const int32_t cStartingMana = 100;
+const int32_t cManaGainFromAge = 250;
+const int32_t cStartingMana = 500;
 const int cAmuletBreakIntervalLines = 10;
 const int cMaxAmuletBrokenChars = 25;
 
+const bool DebugLogManaUsage = true;
+
 // Global variables
 inline int32_t g_manaCounter = 0;
+static void UseMana(int aBitsUsed, std::string aReason = "undefined")
+{
+    g_manaCounter -= aBitsUsed*8; // to byte
+    if(DebugLogManaUsage)
+    {
+        std::cout << "Mana used: " << aBitsUsed*8 << " by " << aReason << std::endl;
+    }
+} 
 
 // input
 inline std::vector<std::string> lines;
@@ -100,7 +110,7 @@ public:
     {
         size_t size = sizeof(T);
 
-        g_manaCounter -= size;
+        UseMana(size, typeid(T).name());
 
         T* obj = static_cast<T*>(malloc(size));
 
@@ -113,7 +123,7 @@ public:
     template <typename T>
     void Cast()
     {
-        g_manaCounter -= sizeof(T);
+        UseMana(sizeof(T), typeid(T).name());
     }
     template <typename T>
     void Cast(const T &obj)
@@ -130,7 +140,7 @@ public:
             size = sizeof(T);
         }
 
-        g_manaCounter -= size;
+        UseMana(sizeof(T), typeid(T).name());
     }
 
     virtual std::string Part1() = 0;
