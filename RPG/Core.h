@@ -21,7 +21,7 @@ const int32_t cStartingMana = 500;
 const int cAmuletBreakIntervalLines = 10;
 const int cMaxAmuletBrokenChars = 25;
 
-const bool DebugLogManaUsage = true;
+const bool DebugLogManaUsage = false;
 
 // Global variables
 inline int32_t g_manaCounter = 0;

@@ -1,5 +1,7 @@
 #include "../../RPG/Core.h"
 
+
+
 class Room : public Encounter
 {
 public: 
@@ -41,7 +43,22 @@ public:
 
     std::string Part2() override
     {
-        return std::to_string( 0 );
+        uint32_c outp = 0;
+        for (auto it_left = lines.begin(); it_left != lines.end(); ++it_left)
+        {
+            const uint64_t cLeftVal = stoi(AOCUtilities::split(*it_left,"   ")[0]); // just cache, no Energy
+            
+            for (auto it_right = lines.begin(); it_right != lines.end(); ++it_right)
+            {
+                const uint64_t cRightVal = stoi(AOCUtilities::split(*it_right,"   ")[1]); // just cache, no Energy
+
+                if (cLeftVal == cRightVal)
+                {
+                    outp += cLeftVal;
+                }
+            }
+        }
+        return outp;
     }
 };
 
@@ -52,8 +69,8 @@ int main()
     room.LoadAdventure
     (
         /*   Age: */ 0
-        ,/* Mana: */ 0
- ,/* Amulet Wear: */ 0
+      ,/* Energy: */ 0
+,/*Artifact Wear: */ 0
 ,/* Broken Chars: */ ""
     );
 
@@ -62,3 +79,48 @@ int main()
 
     return 0;
 }
+
+/**********************************************************************************
+ *                                                                                *
+ *                       ROOM 1: Chief Historian's office                         *
+ *                                                                                *
+ **********************************************************************************
+ *                                                                                *
+ *  - You carefully push the door open to Room 1, entering a chamber filled with  *
+ *    dusty tomes and ancient scrolls.                                            *
+ *                                                                                *
+ **********************************************************************************
+ *                                                                                *
+ * EVENTS:                                                                        *
+ *                                                                                *
+ *  - You decipher an ancient text in 298.379 milliseconds, expending 128 energy. *
+ *  - You uncover a critical clue, unraveling 3714264 layers of historical        *
+ *    mystery.                                                                    *
+ *                                                                                *
+ **********************************************************************************
+ *                                                                                *
+ * STATS:                                                                         *
+ *                                                                                *
+ *  - Age:              20 years                                                  *
+ *  - Energy:           372 / 500                                                 *
+ *  - Artifact Wear:    0 lines                                                   *
+ *  - Clues damaged in Artifact:                                                  *
+ *                                                                                *
+ **********************************************************************************
+ *                                                                                *
+ * EVENTS:                                                                        *  
+ *                                                                                *
+ *  - You decipher an ancient text in 292.403 milliseconds, expending 32 energy.  *
+ *  - You uncover a critical clue, unraveling 18805872 layers of historical       *
+ *    mystery.                                                                    *
+ *                                                                                *
+ **********************************************************************************
+ *                                                                                *
+ * STATS:                                                                         *
+ *                                                                                *
+ *  - Age:              20 years                                                  *
+ *  - Energy:           340 / 500                                                 *
+ *  - Artifact Wear:    0 lines                                                   *
+ *  - Clues damaged in Artifact:                                                  *
+ *                                                                                *
+ **********************************************************************************/
