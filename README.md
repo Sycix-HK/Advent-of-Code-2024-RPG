@@ -9,7 +9,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |  |   |   |   |  |    | [Day 1](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room1/Room1.cpp) <br> ⭐⭐ <br> ```Age 20``` |
-| [Day 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp) <br> ⭐⭐ <br> ```Age 21``` | Day 3 <br> ⏳⏳  | Day 4 <br> ⏳⏳  | Day 5 <br> ⏳⏳  | Day 6 <br> ⏳⏳  | Day 7 <br> ⏳⏳  | Day 8 <br> ⏳⏳  |
+| [Day 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp) <br> ⭐⭐ <br> ```Age 20``` | [Day 3](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room3/Room3.cpp) <br> ⭐⭐ <br> ```Age 21```  | Day 4 <br> ⏳⏳  | Day 5 <br> ⏳⏳  | Day 6 <br> ⏳⏳  | Day 7 <br> ⏳⏳  | Day 8 <br> ⏳⏳  |
 | Day 9 <br> ⏳⏳ | Day 10 <br> ⏳⏳  | Day 11 <br> ⏳⏳  | Day 12 <br> ⏳⏳  | Day 13 <br> ⏳⏳  | Day 14 <br> ⏳⏳  | Day 15 <br> ⏳⏳  |
 | Day 16 <br> ⏳⏳ | Day 17 <br> ⏳⏳  | Day 18 <br> ⏳⏳  | Day 19 <br> ⏳⏳  | Day 20 <br> ⏳⏳  | Day 21 <br> ⏳⏳  | Day 22 <br> ⏳⏳  |
 | Day 23 <br> ⏳⏳ |  Day 24 <br> ⏳⏳  |   Day 25 <br> ⏳⏳ |   |   |
@@ -48,7 +48,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 
 # Combat Log
 
-* You carefully push the door open to [Room 1](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room1/Room1.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+* You carefully push the door open to [room 1](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room1/Room1.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
 ```
 - Age: 20 years
 - Energy: 500 / 500
@@ -72,7 +72,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 - Clues damaged in Artifact:
 ```
 ---
- * You carefully push the door open to [Room 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+ * You carefully push the door open to [room 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
 ```
 - Age: 20 years
 - Energy: 340 / 500
@@ -100,6 +100,39 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 - Age: 21 years
 - Energy: 750 / 750
 - Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+---
+ * You carefully push the door open to [room 3](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room3/Room3.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+```
+- Age: 20 years
+- Energy: 52 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You activate the artifact, shielding 1344 energy as it endures 3 lines of strain.
+ * You decipher an ancient text in 2.0225 milliseconds, expending 32 energy.
+ * You uncover a critical clue, unraveling 171183089 layers of historical mystery.
+```
+- Age: 20 years
+- Energy: 20 / 500
+- Artifact Wear: 3 lines
+- Clues damaged in Artifact:
+```
+ * You take a moment to recover, drawing on the strength of the room's historical resonance, growing wiser but older.
+```
+- Age: 21 years
+- Energy: 750 / 750
+- Artifact Wear: 3 lines
+- Clues damaged in Artifact:
+```
+ * You activate the artifact, shielding 1344 energy as it endures 3 lines of strain.
+ * You decipher an ancient text in 2.6219 milliseconds, expending 32 energy.
+ * You uncover a critical clue, unraveling 63866497 layers of historical mystery.
+```
+- Age: 21 years
+- Energy: 718 / 750
+- Artifact Wear: 6 lines
 - Clues damaged in Artifact:
 ```
 ---
