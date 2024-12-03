@@ -25,13 +25,15 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 ### Energy System
 - Every memory allocation deducts from your energy pool.
 - Some personal rules:
-    - Loop indicies and const/cache variables do not have to cost energy, since you could obviously replace them by computing the same line everywhere it's used
+    - Const/readability variables do not have to cost energy, when you could obviously replace them by computing the same line everywhere it's used.
+    - Loop indicies have to cost energy wherever they are actually used, iterators simulating a foreach are free.
+    - While using a function's return value and passing literals as parameters doesn't necessarily allocate memory on the heap, the system could still be cheated with them, so return values and parameters have to be energy-managed.
  
 ### Artifact:
   - Creates a custom scope where allocations won't cost energy, but each line of use wears it down, introducing loss of characters to use inside scope next time.
-  - You may only use the artifact once per enemy (aoc half day)
-  - You may not use it inside loops
-  - You may not return early from the artifact's scope
+  - You may only use the artifact once per enemy (aoc half day).
+  - You may not use it inside loops.
+  - You may not return early from the artifact's scope.
   - Every 10 lines used will break characters, constraining the letters you can use within the artifact's scope for consequent uses, until repaired.
   - You may not exceed 25 broken characters, not even if you intend to repair it after.
   - When dealing with a long line with multiple operations or lambda functions inside them (like an std::transform or std::acumulate), the rule is that each ; counts as a line. So an std::transform with a lambda function with a single return line costs 2 lines of wear.
