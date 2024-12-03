@@ -134,9 +134,6 @@ int main()
     Actions->Solve(&Room::Part1, room);
     Actions->Solve(&Room::Part2, room);
 
-    // 52 energy won't be enough for the next puzzle
-    Actions->Rest();
-
     return 0;
 }
 
