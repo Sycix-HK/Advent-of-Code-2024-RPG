@@ -87,16 +87,14 @@ public:
 
     void LoadAdventure(int aAge, int32_t aManaLeft, int aAmuletWear, std::string aBrokenCharacters)
     {
-        if(aAge == 0)
+        if(aAge != 0)
         {
-            return;
+            mp_state->age = aAge;
+            g_manaCounter = aManaLeft;
+            mp_state->amuletWear = aAmuletWear;
+            mp_state->brokenCharacters = aBrokenCharacters;
         }
         
-        mp_state->age = aAge;
-        g_manaCounter = aManaLeft;
-        mp_state->amuletWear = aAmuletWear;
-        mp_state->brokenCharacters = aBrokenCharacters;
-
         theme->printState(mp_state);
     }
 
@@ -120,10 +118,9 @@ public:
         return obj;
     }
 
-    template <typename T>
-    void Cast()
+    void Cast(int size, std::string name)
     {
-        UseMana(sizeof(T), typeid(T).name());
+        UseMana(size, name);
     }
     template <typename T>
     void Cast(const T &obj)
@@ -135,12 +132,17 @@ public:
         {
             size = obj.size() * sizeof(typename T::value_type); // Compute content size
         }
+        // check if the object is a std::string
+        else if constexpr (std::is_same_v<T, std::string>)
+        {
+            size = obj.size() + 1 + sizeof(T); // Compute content size plus null terminator
+        }
         else
         {
             size = sizeof(T);
         }
 
-        UseMana(sizeof(T), typeid(T).name());
+        UseMana(size, typeid(T).name());
     }
 
     virtual std::string Part1() = 0;

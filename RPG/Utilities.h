@@ -11,7 +11,7 @@ namespace AOCUtilities
     std::vector<std::string> ReadLines(int aRoom)
     {
         std::stringstream path_ss;
-        path_ss << "X:/AdventOfCode/Advent-of-Code-2024-RPG/Dungeon/Room1/input.txt";
+        path_ss << "X:/AdventOfCode/Advent-of-Code-2024-RPG/Dungeon/Room"<<aRoom<<"/input.txt";
         std::string filePath = path_ss.str();
 
         std::ifstream file(filePath);

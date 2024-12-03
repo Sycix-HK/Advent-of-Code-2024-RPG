@@ -1,7 +1,5 @@
 #include "../../RPG/Core.h"
 
-
-
 class Room : public Encounter
 {
 public: 
@@ -64,7 +62,7 @@ public:
 
 int main()
 {
-    Room room(1);
+    Room room( 1 );
 
     room.LoadAdventure
     (
@@ -85,42 +83,28 @@ int main()
  *                       ROOM 1: Chief Historian's office                         *
  *                                                                                *
  **********************************************************************************
- *                                                                                *
- *  - You carefully push the door open to Room 1, entering a chamber filled with  *
- *    dusty tomes and ancient scrolls.                                            *
- *                                                                                *
- **********************************************************************************
- *                                                                                *
- * EVENTS:                                                                        *
- *                                                                                *
- *  - You decipher an ancient text in 298.379 milliseconds, expending 128 energy. *
- *  - You uncover a critical clue, unraveling 3714264 layers of historical        *
- *    mystery.                                                                    *
- *                                                                                *
- **********************************************************************************
- *                                                                                *
- * STATS:                                                                         *
- *                                                                                *
- *  - Age:              20 years                                                  *
- *  - Energy:           372 / 500                                                 *
- *  - Artifact Wear:    0 lines                                                   *
- *  - Clues damaged in Artifact:                                                  *
- *                                                                                *
- **********************************************************************************
- *                                                                                *
- * EVENTS:                                                                        *  
- *                                                                                *
- *  - You decipher an ancient text in 292.403 milliseconds, expending 32 energy.  *
- *  - You uncover a critical clue, unraveling 18805872 layers of historical       *
- *    mystery.                                                                    *
- *                                                                                *
- **********************************************************************************
- *                                                                                *
- * STATS:                                                                         *
- *                                                                                *
- *  - Age:              20 years                                                  *
- *  - Energy:           340 / 500                                                 *
- *  - Artifact Wear:    0 lines                                                   *
- *  - Clues damaged in Artifact:                                                  *
- *                                                                                *
- **********************************************************************************/
+
+ * You carefully push the door open to room 1, entering a chamber filled with dusty tomes and ancient scrolls.
+
+- Age: 20 years
+- Energy: 500 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+
+ * You decipher an ancient text in 293.283 milliseconds, expending 128 energy.
+ * You uncover a critical clue, unraveling 3714264 layers of historical mystery.
+
+- Age: 20 years
+- Energy: 372 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+
+ * You decipher an ancient text in 290.623 milliseconds, expending 32 energy.
+ * You uncover a critical clue, unraveling 18805872 layers of historical mystery.
+
+- Age: 20 years
+- Energy: 340 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+
+*/

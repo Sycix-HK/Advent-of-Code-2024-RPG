@@ -51,12 +51,24 @@ public:
     ManaInt operator/(int other) const { return ManaInt(value / static_cast<T>(other)); }
     ManaInt operator%(int other) const { return ManaInt(value % static_cast<T>(other)); }
 
+    ManaInt operator+(size_t other) const { return ManaInt(value + static_cast<T>(other)); }
+    ManaInt operator-(size_t other) const { return ManaInt(value - static_cast<T>(other)); }
+    ManaInt operator*(size_t other) const { return ManaInt(value * static_cast<T>(other)); }
+    ManaInt operator/(size_t other) const { return ManaInt(value / static_cast<T>(other)); }
+    ManaInt operator%(size_t other) const { return ManaInt(value % static_cast<T>(other)); }
+
     // Friend functions for symmetry: int + ManaInt, int - ManaInt, etc.
     friend ManaInt operator+(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) + rhs.value); }
     friend ManaInt operator-(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) - rhs.value); }
     friend ManaInt operator*(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) * rhs.value); }
     friend ManaInt operator/(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) / rhs.value); }
     friend ManaInt operator%(int lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) % rhs.value); }
+
+    friend ManaInt operator+(size_t lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) + rhs.value); }
+    friend ManaInt operator-(size_t lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) - rhs.value); }
+    friend ManaInt operator*(size_t lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) * rhs.value); }
+    friend ManaInt operator/(size_t lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) / rhs.value); }
+    friend ManaInt operator%(size_t lhs, const ManaInt& rhs) { return ManaInt(static_cast<T>(lhs) % rhs.value); }
 
     // Compound assignment operators with another ManaInt
     ManaInt& operator+=(const ManaInt& other) { value += other.value; return *this; }
@@ -71,6 +83,12 @@ public:
     ManaInt& operator*=(int other) { value *= static_cast<T>(other); return *this; }
     ManaInt& operator/=(int other) { value /= static_cast<T>(other); return *this; }
     ManaInt& operator%=(int other) { value %= static_cast<T>(other); return *this; }
+
+    ManaInt& operator+=(size_t other) { value += static_cast<T>(other); return *this; }
+    ManaInt& operator-=(size_t other) { value -= static_cast<T>(other); return *this; }
+    ManaInt& operator*=(size_t other) { value *= static_cast<T>(other); return *this; }
+    ManaInt& operator/=(size_t other) { value /= static_cast<T>(other); return *this; }
+    ManaInt& operator%=(size_t other) { value %= static_cast<T>(other); return *this; }
 
     // Comparison operators
     bool operator==(const ManaInt& other) const { return value == other.value; }
@@ -88,6 +106,13 @@ public:
     bool operator>(int other) const { return value > static_cast<T>(other); }
     bool operator>=(int other) const { return value >= static_cast<T>(other); }
 
+    bool operator==(size_t other) const { return value == static_cast<T>(other); }
+    bool operator!=(size_t other) const { return value != static_cast<T>(other); }
+    bool operator<(size_t other) const { return value < static_cast<T>(other); }
+    bool operator<=(size_t other) const { return value <= static_cast<T>(other); }
+    bool operator>(size_t other) const { return value > static_cast<T>(other); }
+    bool operator>=(size_t other) const { return value >= static_cast<T>(other); }
+
     // Friend functions for symmetry
     friend bool operator==(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) == rhs.value; }
     friend bool operator!=(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) != rhs.value; }
@@ -96,6 +121,13 @@ public:
     friend bool operator>(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) > rhs.value; }
     friend bool operator>=(int lhs, const ManaInt& rhs) { return static_cast<T>(lhs) >= rhs.value; }
 
+    friend bool operator==(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) == rhs.value; }
+    friend bool operator!=(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) != rhs.value; }
+    friend bool operator<(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) < rhs.value; }
+    friend bool operator<=(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) <= rhs.value; }
+    friend bool operator>(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) > rhs.value; }
+    friend bool operator>=(size_t lhs, const ManaInt& rhs) { return static_cast<T>(lhs) >= rhs.value; }
+
     // Bitwise operators
     ManaInt operator&(const ManaInt& other) const { return ManaInt(value & other.value); }
     ManaInt operator|(const ManaInt& other) const { return ManaInt(value | other.value); }
@@ -103,6 +135,18 @@ public:
     ManaInt operator~() const { return ManaInt(~value); }
     ManaInt operator<<(int shift) const { return ManaInt(value << shift); }
     ManaInt operator>>(int shift) const { return ManaInt(value >> shift); }
+
+    // Compound assignment operators
+    ManaInt& operator&=(const ManaInt& other) { value &= other.value; return *this; }
+    ManaInt& operator|=(const ManaInt& other) { value |= other.value; return *this; }
+    ManaInt& operator^=(const ManaInt& other) { value ^= other.value; return *this; }
+
+    // Numeric literal support
+    ManaInt operator&(int num) const { return ManaInt(value & num); }
+    ManaInt operator|(int num) const { return ManaInt(value | num); }
+    ManaInt operator^(int num) const { return ManaInt(value ^ num); }
+    ManaInt& operator&=(int num) { value &= num; return *this; }
+    ManaInt& operator|=(int num) { value |= num; return *this; }
 
     // Increment and decrement operators
     ManaInt& operator++() { // Prefix
@@ -133,6 +177,8 @@ public:
     }
 
     T Extract() const { return value; }
+    T Get() const { return value; }
+    T get() const { return value; }
 };
 
 using uint8_c = ManaInt<uint8_t>;

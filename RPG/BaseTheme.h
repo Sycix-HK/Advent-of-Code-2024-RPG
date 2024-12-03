@@ -28,7 +28,6 @@ public:
         std::stringstream enter_ss;
         enter_ss << "You push open the creaking door to enter room "<< aRoomId <<", crawling with enemies.";
         flavorPrint(enter_ss.str());
-        std::cout << std::endl;
     }
 
     virtual void MissingInput() const 

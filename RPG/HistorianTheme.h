@@ -21,7 +21,6 @@ public:
         std::stringstream enter_ss;
         enter_ss << "You carefully push the door open to room "<< aRoomId <<", entering a chamber filled with dusty tomes and ancient scrolls.";
         flavorPrint(enter_ss.str());
-        std::cout << std::endl;
     }
 
     void MissingInput() const override
