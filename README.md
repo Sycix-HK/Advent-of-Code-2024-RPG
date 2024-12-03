@@ -18,6 +18,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 
 ![image](https://github.com/user-attachments/assets/0e9feb51-3cec-4640-bac4-3d26310f038a)
 
+---
 
 # Features and Rules
 
@@ -40,4 +41,62 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
   - You may also repair the artifact between puzzles, which won't restore energy, but will clear all broken characters from the artifact to give a fresh start to it. This action will age you the same way.
   - Your goal is to complete the challenges as young as possible.
 
+---
 
+# Combat Log
+
+* You carefully push the door open to [Room 1](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room1/Room1.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+```
+- Age: 20 years
+- Energy: 500 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 300.906 milliseconds, expending 128 energy.
+ * You uncover a critical clue, unraveling 3714264 layers of historical mystery.
+```
+- Age: 20 years
+- Energy: 372 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 294.413 milliseconds, expending 32 energy.
+ * You uncover a critical clue, unraveling 18805872 layers of historical mystery.
+```
+- Age: 20 years
+- Energy: 340 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+---
+ * You carefully push the door open to [Room 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+```
+- Age: 20 years
+- Energy: 340 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 1.1869 milliseconds, expending 40 energy.
+ * You uncover a critical clue, unraveling 463 layers of historical mystery.
+```
+- Age: 20 years
+- Energy: 300 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 4.5416 milliseconds, expending 248 energy.
+ * You uncover a critical clue, unraveling 514 layers of historical mystery.
+```
+- Age: 20 years
+- Energy: 52 / 500
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+ * You take a moment to recover, drawing on the strength of the room's historical resonance, growing wiser but older.
+```
+- Age: 21 years
+- Energy: 750 / 750
+- Artifact Wear: 0 lines
+- Clues damaged in Artifact:
+```
+---
