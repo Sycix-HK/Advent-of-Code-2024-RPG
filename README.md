@@ -37,6 +37,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
   - Every 10 lines used will break characters, constraining the letters you can use within the artifact's scope for consequent uses, until repaired.
   - You may not exceed 25 broken characters, not even if you intend to repair it after.
   - When dealing with a long line with multiple operations or lambda functions inside them (like an std::transform or std::acumulate), the rule is that each ; counts as a line. So an std::transform with a lambda function with a single return line costs 2 lines of wear.
+  - Loops counts as one line
 
 ### Resting and Aging:
   - Resting between puzzles restores energy but increases your character’s age.
