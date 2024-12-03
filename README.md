@@ -25,7 +25,7 @@ Instead of solving puzzles straightforwardly, you manage a limited energy pool, 
 ### Energy System
 - Every memory allocation deducts from your energy pool.
 - Some personal rules:
-    - Const/readability variables do not have to cost energy, when you could obviously replace them by computing the same line everywhere it's used.
+    - Constexpr and readability-purpose const variables do not have to cost energy, when you could obviously replace them by computing the same line everywhere it's used.
     - Loop indicies have to cost energy wherever they are actually used, iterators simulating a foreach are free.
     - While using a function's return value and passing literals as parameters doesn't necessarily allocate memory on the heap, the system could still be cheated with them, so return values and parameters have to be energy-managed.
  
