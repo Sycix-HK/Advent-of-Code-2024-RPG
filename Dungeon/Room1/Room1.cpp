@@ -22,7 +22,7 @@ public:
             // so let's find the lowest right side value each time
             for (auto it_right = lines.begin(); it_right != lines.end(); ++it_right)
             {
-                int tempRightVal = stoi(AOCUtilities::split(*it_right,"   ")[1]); // just cache for readability, obviously droppable, so don't use energy
+                const int tempRightVal = stoi(AOCUtilities::split(*it_right,"   ")[1]); // just cache for readability, obviously droppable, so don't use energy
                 if (tempRightVal < lowestValNow)
                 {
                     lowestValNow = tempRightVal;
