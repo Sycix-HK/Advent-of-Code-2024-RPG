@@ -3,6 +3,7 @@ This repository contains solutions for Advent of Code 2024, presented with a uni
 In this approach, solving puzzles becomes part of a larger challenge involving resource management, constraints, and character progression.
 Instead of solving puzzles straightforwardly, you manage a limited energy pool, contend with aging as you rest, and carefully use an artifact with specific rules and restrictions.
 
+You can find the tutorial [here](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/TutorialRoom/Tutorial.cpp)
 
 ---
 
