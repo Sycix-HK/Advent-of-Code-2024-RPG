@@ -122,6 +122,10 @@ public:
     {
         UseMana(size, name);
     }
+    void Cast(long long unsigned int size, std::string name = "manual cast")
+    {
+        UseMana(size, name);
+    }
     template <typename T>
     T Cast(const T &obj)
     {
