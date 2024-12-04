@@ -118,12 +118,12 @@ public:
         return obj;
     }
 
-    void Cast(int size, std::string name)
+    void Cast(int size, std::string name = "manual cast")
     {
         UseMana(size, name);
     }
     template <typename T>
-    void Cast(const T &obj)
+    T Cast(const T &obj)
     {
         size_t size = 0;
 
@@ -143,6 +143,8 @@ public:
         }
 
         UseMana(size, typeid(T).name());
+
+        return obj;
     }
 
     virtual std::string Part1() = 0;
