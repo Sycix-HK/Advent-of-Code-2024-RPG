@@ -55,4 +55,34 @@ namespace AOCUtilities
 
         return tokens;
     }
+
+    std::vector<std::vector<std::string>> splitIntoGroups(const std::vector<std::string> &lines)
+    {
+        std::vector<std::vector<std::string>> groups;
+        std::vector<std::string> currentGroup;
+
+        for (const auto &line : lines)
+        {
+            if (line.empty())
+            {
+                if (!currentGroup.empty())
+                {
+                    groups.push_back(currentGroup);
+                    currentGroup.clear();
+                }
+            }
+            else
+            {
+                currentGroup.push_back(line);
+            }
+        }
+
+        // last group
+        if (!currentGroup.empty())
+        {
+            groups.push_back(currentGroup);
+        }
+
+        return groups;
+    }
 }
