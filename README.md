@@ -10,7 +10,7 @@ You can find the tutorial [here](https://github.com/Sycix-HK/Advent-of-Code-2024
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |  |   |   |   |  |    | [Day 1](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room1/Room1.cpp) <br> ⭐⭐ <br> ```Age 20``` |
-| [Day 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp) <br> ⭐⭐ <br> ```Age 20``` | [Day 3](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room3/Room3.cpp) <br> ⭐⭐ <br> ```Age 21```  | [Day 4](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/tree/main/Dungeon/Room4) <br> ⭐⭐ <br> ```Age 21```  | Day 5 <br> ⏳⏳  | Day 6 <br> ⏳⏳  | Day 7 <br> ⏳⏳  | Day 8 <br> ⏳⏳  |
+| [Day 2](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room2/Room2.cpp) <br> ⭐⭐ <br> ```Age 20``` | [Day 3](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room3/Room3.cpp) <br> ⭐⭐ <br> ```Age 21```  | [Day 4](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/tree/main/Dungeon/Room4/Room4.cpp) <br> ⭐⭐ <br> ```Age 21```  | [Day 5](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room5/Room5.cpp) <br> ⭐⭐ <br> ```Age 21```  | Day 6 <br> ⏳⏳  | Day 7 <br> ⏳⏳  | Day 8 <br> ⏳⏳  |
 | Day 9 <br> ⏳⏳ | Day 10 <br> ⏳⏳  | Day 11 <br> ⏳⏳  | Day 12 <br> ⏳⏳  | Day 13 <br> ⏳⏳  | Day 14 <br> ⏳⏳  | Day 15 <br> ⏳⏳  |
 | Day 16 <br> ⏳⏳ | Day 17 <br> ⏳⏳  | Day 18 <br> ⏳⏳  | Day 19 <br> ⏳⏳  | Day 20 <br> ⏳⏳  | Day 21 <br> ⏳⏳  | Day 22 <br> ⏳⏳  |
 | Day 23 <br> ⏳⏳ |  Day 24 <br> ⏳⏳  |   Day 25 <br> ⏳⏳ |   |   |
@@ -157,6 +157,30 @@ You can find the tutorial [here](https://github.com/Sycix-HK/Advent-of-Code-2024
 ```
 - Age: 21 years
 - Energy: 638 / 750
+- Artifact Wear: 6 lines
+- Clues damaged in Artifact:
+```
+---
+ * You carefully push the door open to [room 5](https://github.com/Sycix-HK/Advent-of-Code-2024-RPG/blob/main/Dungeon/Room5/Room5.cpp), entering a chamber filled with dusty tomes and ancient scrolls.
+```
+- Age: 21 years
+- Energy: 638 / 750
+- Artifact Wear: 6 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 525.139 milliseconds, expending 24 energy.
+ * You uncover a critical clue, unraveling 4135 layers of historical mystery.
+```
+- Age: 21 years
+- Energy: 614 / 750
+- Artifact Wear: 6 lines
+- Clues damaged in Artifact:
+```
+ * You decipher an ancient text in 8174.2 milliseconds, expending 416 energy.
+ * You uncover a critical clue, unraveling 5285 layers of historical mystery.
+```
+- Age: 21 years
+- Energy: 198 / 750
 - Artifact Wear: 6 lines
 - Clues damaged in Artifact:
 ```
